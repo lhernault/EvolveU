@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title> Basic HTML & CSS </title>
+    <link rel="stylesheet" type="text/css" href="basicStyle.css">
+</head>
+
+<body>
+
+<!-- display=s inp -->
+
+
+<div class="FirstE">
+<h1> Hello World from HTML</h1>
+
+  value :
+<input id="inp" type="text"> <br>
+<button id="btn1" class="btn1">Push Me </button> <br> <br>
+</div> <br>
+
+
+<!--***********___________________ ***********-->
+<!-- ************calculator ******************-->
+<!--***********___________________ ***********-->
+
+
+<div class="SecondE">
+
+<h1> My Calculator </h1>
+  <form name="calculator">
+
+        <input type="text" class="inp" name="input1" maxlength="9" size="4" value="0" size="12">
+        <input type="text" class="inp" name="input2"  maxlength="9" size="4" value="0" size="12">
+        <input type="text" class="inp" name="outcome"  maxlength="9" size="4" value="0" size="12">
+        <br>
+        <input type="Button" class="op" name="" value=" + " onclick="calculate('+')">
+        <input type="Button" class="op" name="" value=" - " onclick="calculate('-')">
+        <input type="Button" class="op" name="" value=" X " onclick="calculate('*')">
+        <input type="Button" class="op" name="" value=" / " onclick="calculate('/')">
+
+  </form> <br>
+</div> <br>
+
+
+<!--***********___________________ ***********-->
+<!--***********Canadian Taxes***********-->
+<!--***********___________________ ***********-->
+
+
+
+<div class="ThirdE">
+
+
+<h1> Canadian Taxes </h1>
+<h5>Taxable income-line 260</h5>
+
+<input id="income"  type="text" value=""><br><br>
+<input  id="canTax"type="text"><br><br>
+
+<button id="btnCal">Do your thing!</button> <br>
+
+
+<br>
+<br>
+</div> <br>
+
+
+<!--***********___________________ ***********-->
+<!--***********Working with Arrays ***********-->
+<!--***********___________________ ***********-->
+
+<div class="FourE">
+
+<h1>Working with Arrays</h1>
+<form id="arrayTask">
+<input type="" id="inputArr" >
+</form> <br><br>
+<button id="addBtn" >Add</button> <br><br>
+<button id="showArr" >Show</button>
+<button id="totalArr">Total</button>
+<button id="clearArr">Clear</button><br><br>
+
+<div id="ArrMsj"></div>
+
+</div><br>
+
+<!--***********___________________ ***********-->
+<!--***********Working with Dictionaries ***********-->
+<!--***********___________________ ***********-->
+
+<div class="FiveE">
+<h1>Working with Dictionaries</h1>
+<input id="inputDic" type="" name=""> <br><br>
+<button id="lookBtn" >Lookup</button><br><br>
+<div id="dicMsj"></div>
+
+</div>
+
+
+
+
+
+  </footer>
+
+  <script src="basic.js"></script>
+
+</body>
+
+</html>

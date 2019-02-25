@@ -1,0 +1,67 @@
+
+html, body {
+
+		font-family: Arial, Helvetica, sans-serif;
+		width: 90%; /*  instead of px*/
+		margin-left:auto;
+		margin-right:auto;
+    color: rgba(0,0,0,.3);
+    text-align: center;
+    letter-spacing: .5em;
+    top: 15%;
+	  background: linear-gradient(to right, #9fe0d7 , #09e2c5);
+}
+
+
+.FirstE {
+	border: 3px solid;
+  border-radius: 5px;
+}
+
+.SecondE {
+	border: 3px solid;
+  border-radius: 5px;
+}
+
+.ThirdE {
+  border: 3px solid;
+   border-radius: 5px;
+}
+
+.FourE{
+  border: 3px solid;
+  border-radius: 5px;
+}
+
+.FiveE {
+  border: 3px solid;
+  border-radius: 5px;
+}
+
+.op {
+  margin-top: 10px;
+  line-height: 40px;
+  font-weight: bold;
+  padding: 0 10px;
+  background: rgba(0,0,0,.3);
+  border: 2px outset #aaa;
+  border-radius: 4px;
+}
+
+.op:hover {
+  background: rgba(183,222,237,1);
+  transition: all 0.2s;
+}
+
+.btn1 {
+	margin-top: 10px;
+}
+
+.inp {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+h5 {
+	text-align: left;
+}

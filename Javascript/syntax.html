@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+   <title> Basic Syntax </title>
+ <h1> Basic Syntax</h1>
+<script type="text/javascript">
+
+<!-- *********Define Attributes  and Variables ************ -->
+<!-- *Numbers * -->
+var a = 3;
+var b = 2;
+console.log(a+b);
+
+<!-- *Strings * -->
+var string1 = "First ";
+var string2 = "Name";
+console.log(string1 + string2);
+
+<!-- *boolean* -->
+var x = 3;
+var y = 5;
+
+console.log (x === y);
+
+<!-- *array* -->
+var cities = ["Vancouver", "Seatle", "Tokio"];
+
+console.log ([cities]);
+
+<!-- *Object* -->
+
+let house = {
+	type : "townhouse",
+	color: "white",
+	rooms: "4",
+};
+console.log (house);
+
+<!-- *Undefined* -->
+
+var NoDefined;
+console.log (NoDefined);
+
+<!-- *If* -->
+
+var num1 = 32;
+var num2 = 45;
+
+if (num1 < num2) {
+	console.log ("I am the biggest number");
+}
+
+<!-- *If/ else* -->
+
+var day = "day";
+var night = "night";
+
+if (day != "day") {
+	console.log ("have a nice " + " " + day)
+} else  {
+	console.log ("have a good" +" "+ night)
+}
+
+<!-- *functions* -->
+function essayOne () {
+	return "works well";
+}
+console.log (essayOne());
+
+var name = " ";
+var age = " ";
+
+function user (name, age) {
+	return " His name is" + " " + name + " and his age is" + " " + age;
+}
+console.log (user ("Tom", "33"));
+
+<!-- *Arrays add to the front* -->
+var cities = ["Vancouver", "Seattle", "Tokio"];
+
+cities.unshift("Buenos Aires");
+console.log (cities);
+
+<!-- *Arrays add to the end* -->
+var cities = ["Vancouver", "Seattle", "Tokio"];
+
+cities.push("Berlin");
+console.log (cities);
+
+<!-- *Loops / for*  use when we know how many tours-->
+console.log ("loop start")
+for (numbers = 1; numbers <=3; numbers ++){
+  console.log(numbers);
+};
+console.log("loop ending");
+
+<!-- *Loops / for in*-->
+
+var car = {
+    brand: "dodge",
+    doors: 4,
+    color : "red",
+}
+var description = " "
+ for (description in car) {
+   console.log (car[description]);
+}
+
+<!-- *Loops / while* -->
+
+let nbTours = 1;
+console.log("It stars");
+while (nbTours <=5) {
+
+console.log (nbTours);
+nbTours++;
+}
+console.log("It ends here!");
+
+<!-- *Loops / do while*-->
+var valueVar= 20;
+  do { console.log("the var has the value:" + valueVar);
+}
+  while (valueVar <10);
+
+<!-- *Loops / forEach*-->
+var movies = ["Titanic", "La vida es bella", "x-men"];
+
+movies.forEach(function (movies) {
+    console.log(movies);
+});
+
+<!-- *Objects*-->
+
+var company = {
+  name : "style design",
+  location : "Memphis",
+  employes : 120,
+}
+console.log (company.location);
+</script>
+
+
+
+
+
+
+</html>
