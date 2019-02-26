@@ -72,7 +72,7 @@ function taxCalculator(){
 
 let addArrBtn =  document.getElementById("addBtn").addEventListener("click",addingArray);
 let showArrayBtn = document.getElementById("showArr").addEventListener("click",showArray);
-//let totalArrayBtn = document.getElementById("totalArr").addEventListener("click",total);
+let totalArrayBtn = document.getElementById("totalArr").addEventListener("click",total);
 let clearArrayBtn = document.getElementById("clearArr").addEventListener("click",clearArray);
 
 
@@ -95,25 +95,21 @@ console.log(itemsArr);
 return false;
 }
  
- //show the array...It works!!!
+ //show the array...It works!!!/
 function showArray () {
 document.getElementById("inputArr").textContent = console.log(itemsArr);
+
 }
 
-//* total
-/*function total(){ 
- totalInputArray = document.getElementById("inputArr").value;
- //var totalOfArr = 0;
-  
-  for(var i = 0; i < itemsArr.length; i++) {
-    console.log(totalInputArray);
-   // v = parseFloat(temp[i]);
-   // if (!isNaN(v)) total += v; 
-  } 
- // document.getElementById("ArrMsj").value = total; 
-  //console.log(total());
-} 
 
+function total() {
+  var sum = 0;
+  for (var i = 0; i < itemsArr.length; i++) {           
+   sum = sum + itemsArr[i]   // Add number on each iteration
+  };
+  console.log(sum);
+ // document.getElementById("ArrMsj").value = total;
+}
 
 
 // ***********/
@@ -122,38 +118,25 @@ function clearArray () {
   document.getElementById("ArrMsj").textContent = "Array is clear now!";
 }
 
+/*********** ---                    --- *********/
+  /*********** --- Working with Dictionaries --- *********/
+/*********** ---                     --- *********/
 
-inputObj = document.getElementById("inputDic").textContent;
+inputObj = document.getElementById("inputDic");
 lookOBj = document.getElementById("lookBtn").addEventListener("click", filtro);
 
-const provinces = {
-  "ab": "alberta",
-  "bc": "british columbia",
-  "sk": "saskatchewan"
+
+function filtro()   {  
+  const provinces = {
+    ab: "alberta",
+    bc: "british columbia",
+    on: "ontario",
+    sk: "saskatchewan",    
+  };
+  console.log(provinces[inputObj.value]);
 }
-province= []
-function filtro()   {   
-for (var key in provinces) {
-    if (provinces.hasOwnProperty(key)) {
-        //console.log(key + " -> " + provinces[key]);
-        console.log( document.getElementById("dicMsj").textContent = provinces[key]);
-    } 
-} 
-}
-
-/*function filtro(letter) {
-  var results = [];
-  var len = provinces.length;
-  for (var i = 0; i < len; i++) {
-    if (provinces[i].indexOf(letter) == 0) results.push(provinces[i]);
-  }
- return document.getElementById("dicMsj").textContent = results;
-}*/
-
-
-
-
-
+  
+ 
 
 
 
