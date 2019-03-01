@@ -1,0 +1,25 @@
+.firstDiv {
+	border: 3px solid;
+  	border-radius: 5px;
+  	padding: 5px;
+  	margin: 1em; 
+  	width:300px; 
+	height:300px;
+}
+
+.addC {
+	border:3px solid;
+	width:900px; 
+	height:600px;
+	margin: 1em; 
+	padding: 5px;
+}
+
+.a .b .c {
+	border: 3px solid;
+  	border-radius: 5px;
+  	padding: 5px;
+  	margin: 1em; 
+  	width:300px; 
+	height:300px;
+}
