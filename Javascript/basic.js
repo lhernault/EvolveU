@@ -1,4 +1,6 @@
+/* 
 
+*/
 //console.log("Hello World from external JavaScript");
 
 /// create the function
