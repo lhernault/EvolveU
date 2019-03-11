@@ -53,12 +53,19 @@ addBtn.addEventListener("click", pushAddBtn);
 
 const addCardBtn = document.getElementById("AddCard");
 const leftSide = document.getElementById("left");
-const divCardBox= document.createElement ("div");
+
 
 let count = 1;
+//addCardBtn.addEventListener("click", makeDivCard); ***la movi al final de f
 
-function makeDivCard() {
+function gato(maulla){
+	console.log("miau", maulla);
+}
+
+
+function makeDivCard(padre) {
 //console.log("testing card", makeDivCard("cards??"));
+const divCardBox= document.createElement ("div");
 	divCardBox.id = "boxCard";
 	divCardBox.className = "a";	
 
@@ -67,7 +74,7 @@ let title = document.createElement ("h1");
 	title.appendChild(document.createTextNode("Card " + " " + count));
 	divCardBox.appendChild(title);
 
-	left.appendChild(divCardBox);
+	padre.target.parentNode.append(divCardBox);
 
 //append all buttons to the new Div	
 const addBeforeBtn = document.createElement("button");
@@ -97,81 +104,59 @@ const deleteBtn = document.createElement("button");
 
 addCardBtn.addEventListener("click", makeDivCard);
 
+
 //*************************************
 // create a function with target Event
 
-divCardBox.addEventListener("click", btnsTarget);
+leftSide.addEventListener("click", btnsTarget);
 
 function btnsTarget(e) {
 	const elementTarget = e.target;
+
 	if (elementTarget.id === "beforeBtn") {
-		console.log("this is 1 target");
+		//console.log("this is 1 target", e.target);
+
+		addingBefore(e);
 	}
 
 	else if (elementTarget.id === "afterBtn") {
 		console.log("this is 2 target");
+		insertingAfter(e);
 	}
 
 	else if (elementTarget.id === "dltBtn") {
 		console.log("this is 3 target");
+		deleting(elementTarget);
+		
 	}
 
-	else { }
+	else 
+		{ }
+}
+
+/* Funcion que funciona con errores aun
+function addingBefore(elementTarget) {
+	//let a = elementTarget;
+	makeDivCard(elementTarget);
+	console.log(elementTarget.parentNode);
+	//e.appendChild(new_div, "boxCard.afterBtn");
+
+}*/
+
+function addingBefore(beforeBtn) {
+	
+	makeDivCard(beforeBtn); // funciona igual que usando elementTarget
+	
+}
+
+function insertingAfter(afterBtn) {
+	
+	makeDivCard(afterBtn);
+	//console.log(elementTarget.parentNode);
+	
 }
 
 
-
-
-/*function btnsInAction(e) {
-	const element = e.target.querySelector(".beforeBtn");
-	if (element==this.beforeBtn) {
-		 var parent = divCardBox.parentNode;
-		 parent.insertBefore(divCardBox, beforeBtn.nextSibling);
- //console.log(e.target , "target");
-} 
+function deleting (elementTarget) {
+elementTarget.parentNode.remove();
 }
-*/
-
-
-	/*
-
-divCardBox.addEventListener("click",insertAfter);
-
-function insertAfter(newElement,targetElement) {
-const newElement = makeDivCard();
-const targetElement = "afterBtn";
-    // target is what you want it to go after. Look for this elements parent.
-    const parent = targetElement.parentNode;
-
-    // if the parents lastchild is the targetElement...
-    if (parent.lastChild === targetElement) {
-        // add the newElement after the target element.
-        parent.appendChild(newElement);
-    } else {
-        // else the target has siblings, insert the new element between the target and it's next sibling.
-        parent.insertBefore(newElement, targetElement.nextSibling);
-    }
-}
-
-
-  
-
-const element = e.target.querySelector(".beforeBtn");
-	if (element==this.beforeBtn) {
-		return;
-
-	while (element && element !== document.body) {
-	if (element==thisBeforeBtn) {
-		return;
-	}
-	element = element.parentNode;
-}
-	this.removeClass();
-} false;*/
-
-
-
-
-
-
-
