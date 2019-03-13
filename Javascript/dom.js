@@ -1,6 +1,7 @@
 //************* adding a click event to DIV 
 //********************************************//
 /*
+//403 943 943 8654
 function divEvent (event) {
 	console.log("I am DOM div");
 }
@@ -16,23 +17,17 @@ const addBtn = document.getElementById("DomAbtn");
 const ol = document.querySelector("ol");
 const li = document.getElementsByTagName("li");
 
-
-function pushShowBtn () {
-	
+function pushShowBtn () {	
 		for(var i = 0; i <= li.length ; ++i){
-			console.log(ol.textContent);
-			
+			console.log(ol.textContent);			
 			//console.log(ol.textContent);
-			//console.log(ol.children);
-}
-}
+			//console.log(ol.children);}
+}}
 showBtn.addEventListener("click", pushShowBtn);
 
 //*******************************************
 // **** Add li pushing add button *********//
 //*******************************************
-
-
 function pushAddBtn () {
 	//console.log("works?")
 
@@ -58,12 +53,24 @@ const leftSide = document.getElementById("left");
 let count = 1;
 //addCardBtn.addEventListener("click", makeDivCard); ***la movi al final de f
 
-function gato(maulla){
+/*function gato(maulla){
 	console.log("miau", maulla);
-}
+}*/
 
+/*******Create a function for make the div************/
+/*******---------------------------------************/
+/*const divCardBox= document.createElement ("div");
+function callingCard () {
+	divCardBox.id = "boxCard";
+	divCardBox.className = "a";	
+//parent.target.parentNode.append(divCardBox);
+leftSide.appendChild(divCardBox);
 
-function makeDivCard(padre) {
+}/*
+
+/*******Create a function to add the buttons to the div*****/
+/**********---------------------------------***************/
+function makeDivCard(parent) {
 //console.log("testing card", makeDivCard("cards??"));
 const divCardBox= document.createElement ("div");
 	divCardBox.id = "boxCard";
@@ -74,16 +81,7 @@ let title = document.createElement ("h1");
 	title.appendChild(document.createTextNode("Card " + " " + count));
 	divCardBox.appendChild(title);
 
-	padre.target.parentNode.append(divCardBox);
-
-//append all buttons to the new Div	
-const addBeforeBtn = document.createElement("button");
-	addBeforeBtn.id = "beforeBtn";
-	addBeforeBtn.className = ("btnCards" + count);
-	addBeforeBtn.textContent="Add Before";
-	//addBeforeBtn.appendChild(document.createTextNode("Add Before"));
-	divCardBox.appendChild(addBeforeBtn);
-
+	//parent.target.parentNode.append(divCardBox);
 
 const addAfterBtn = document.createElement("button");	
 	addAfterBtn.id= "afterBtn";
@@ -91,6 +89,14 @@ const addAfterBtn = document.createElement("button");
 	addAfterBtn.textContent="Add After";
 	//addAfterBtn.appendChild(document.createTextNode("Add After"));
 	divCardBox.appendChild(addAfterBtn);
+
+const addBeforeBtn = document.createElement("button");	
+	addBeforeBtn.id= "beforeBtn";
+	addBeforeBtn.className= ("btnCards" + count);
+	addBeforeBtn.textContent="Add Before";
+	//addAfterBtn.appendChild(document.createTextNode("Add After"));
+	divCardBox.appendChild(addBeforeBtn);
+
 
 const deleteBtn = document.createElement("button");	
 	deleteBtn.id = "dltBtn";
@@ -100,9 +106,10 @@ const deleteBtn = document.createElement("button");
 	divCardBox.appendChild(deleteBtn);	
 	
 	count++
+	return divCardBox;
 }
-
-addCardBtn.addEventListener("click", makeDivCard);
+//addCardBtn.addEventListener("click", callingCard);
+addCardBtn.addEventListener("click", addCard);
 
 
 //*************************************
@@ -143,20 +150,25 @@ function addingBefore(elementTarget) {
 
 }*/
 
-function addingBefore(beforeBtn) {
-	
+function addingBefore(beforeBtn) {	
 	makeDivCard(beforeBtn); // funciona igual que usando elementTarget
-	
+	let x = beforeBtn.target.parentNode; // event target of parent
+	x.parentNode.insertBefore(makeDivCard(),x);
 }
 
 function insertingAfter(afterBtn) {
-	
 	makeDivCard(afterBtn);
+	let x = afterBtn.target.parentNode;
+	x.parentNode.insertBefore(makeDivCard(),x.nextSibling);
 	//console.log(elementTarget.parentNode);
-	
 }
 
 
 function deleting (elementTarget) {
 elementTarget.parentNode.remove();
+}
+
+function addCard (parent){
+	
+	parent.target.parentNode.append(makeDivCard());
 }

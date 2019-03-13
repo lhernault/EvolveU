@@ -10,17 +10,24 @@ const data =
 			{name:"Benjamin", balance:150},
 		]
 	};
-//let count = 0;
 
+
+
+
+
+//**1s try. display value but * Display all the value in one div
 const client = Object.keys(data["clients"]).map(function(key, index)
-	{ return data["clients"][key]["name"]; });
+
+	{ return data["clients"][key]["name"]; }); 
 
 
-//const city = getNestedObject(user, ['personalInfo', 'addresses', 0, 'city']);
-/*const balance = data.clients.balance;
-const result = client.filter(obj => {
-  return client.name.id == client.balance.id
-})*/
+let balance = Object.keys(data["clients"]).map(function(key, index)
+
+	{ return data["clients"][key]["balance"]; });
+
+
+
+
 
 const div = document.getElementById("container");	
 	
@@ -28,15 +35,22 @@ const div = document.getElementById("container");
 
 const element = document.createElement("div");
 	element.className = "card-body";
-    element.createTextNode = "test";
+  //  element.createTextNode = "test";
+
+
 
 let clientName = document.createElement ("h1");
-	clientName.appendChild(document.createTextNode (client));//(client + " " + count));
+	clientName.textContent = (client);//(client + " " + count));
+
+//let clientBalance = document.createElement ("h1");
+//	clientBalance.appendChild(document.createTextNode) = (balance);
 
 
 	element.appendChild(clientName);
+	//element.appendChild(clientBalance);
 
 	padre.target.parentNode.append(element);
+
 
 const dltBtn = document.createElement("button");	
 	dltBtn.id = "dltBtn";
@@ -45,24 +59,11 @@ const dltBtn = document.createElement("button");
 	//deleteBtn.appendChild(document.createTextNode("Delete"));
 	element.appendChild(dltBtn);	
 	
-	//count++
-
-	
+	//count++	
 }
 
 document.body.addEventListener("click", dataClients);
-	/*const div = document.getElementById("container");
-        const element = document.createElement("div");
-        element.className = "card-body";
-        element.createTextNode = "test"*/
-
-   
-        /*`
-                <div class="card-body">
-                    <strong>Product</strong>: ${product.name} -                                       
-                </div>
-          
-        `;*/
+	
         
   
-  
+
