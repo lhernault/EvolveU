@@ -44,10 +44,7 @@ assertEquals("This value","This value");
 function makeEmailArr ([firstName, LastName]){
 	console.log(makeEmailArr);
 		return (firstName + LastName + "@" + "evolveu.ca");
-
-
 }
-
 
 // and before this comment ---
 
@@ -57,3 +54,20 @@ assertEquals('bill.smith@evolveu.com', makeEmailArr(['bill','smith']));
 assertEquals('amy.jones@evolveu.ca', makeEmailArr(['amy','jones']));
 
 console.log(makeEmailArr(arrayLarry));
+
+/*	
+	Write the function to format an email based on an object / map
+*/
+
+// Write the function after this comment ---
+
+function makeEMailObj (){
+	
+}
+
+// and before this comment ---
+
+arrayLarry = {fname:'larry', lname:'shumlich'};
+assertEquals('larry.shumlich@evolveu.ca', makeEmailObj(arrayLarry));
+assertEquals('bill.smith@evolveu.ca', makeEmailObj({fname:'bill',lname:'smith'}));
+assertEquals('amy.jones@evolveu.ca', makeEmailObj({fname:'amy',lname:'jones'}));
