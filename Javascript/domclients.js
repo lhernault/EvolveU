@@ -1,47 +1,60 @@
-const data = 
-	{clients:   						// object 0
-		[								// array
-			{name:"Jane", balance:10}, // object 0
-			{name:"Liam", balance:1000},
-			{name:"Emma", balance:1330},
-			{name:"Olivia", balance:310},
-			{name:"Noah", balance:503},
-			{name:"William", balance:520},
-			{name:"Benjamin", balance:150},
-		]
-	};
+const data = {
+    // object 0
+    clients: [
+        // array
+        { name: "Jane", balance: 10 }, // object 0
+        { name: "Liam", balance: 1000 },
+        { name: "Emma", balance: 1330 },
+        { name: "Olivia", balance: 310 },
+        { name: "Noah", balance: 503 },
+        { name: "William", balance: 520 },
+        { name: "Benjamin", balance: 150 }
+    ]
+};
 
-
+let a = Object.values (data.clients);
+console.log(a);
+function textN() {
+    let info = [];
+    let i = 0;
+    for (i = 0; i < a.length; i++) {
+        console.log(i);
+        info.push();
+    }
+    return (info);
+}
+let text = textN();
+//let count=0;
+console.log(textN);
+//console.log(data.clients[0]);
+//console.log(Object.values(data.clients[0]));
 const div = document.getElementById("container");
 
-	function dataClients (parent) {
+function dataClients(parent) {
+    console.log("works?");
+    const element = document.createElement("div");
+    element.className = "card-body";
+    element.id = "divdiv";
 
-	const element = document.createElement("div");
-	  element.className = "card-body";
-	  element.id = "divdiv";
-	  
-	let clientName = document.createElement ("h1");
-	clientName.textContent = data.clients.[0].name//(client + " " + count));
+    let clientName = document.createElement("h1");
+    clientName.textContent = (text);
+    //clientName.textContent = ("client" + " " + count);
 
+    //let clientBalance = document.createElement("h1");
+    //clientBalance.textContent = data.clients.[0].name;
+    parent.target.parentNode.append(element);
 
+    const dltBtn = document.createElement("button");
+    dltBtn.id = "dltBtn";
+    dltBtn.className = "btnCard"; //("btnCard"+ count);
+    dltBtn.textContent = "Delete";
 
-	let clientBalance = document.createElement ("h1");
-	clientBalance.textContent = data.clients.[0].name;
+    element.appendChild(dltBtn);
 
-
-const dltBtn = document.createElement("button");  
-  dltBtn.id = "dltBtn";
-  dltBtn.className= ("btnCard")//("btnCard"+ count);
-  dltBtn.textContent="Delete";
-  
-  element.appendChild(dltBtn);  
-  
- // count++ 
-
-  }
+    // count++
+}
 
 document.body.addEventListener("click", dataClients);
-
 
 /*1st try
 
@@ -100,11 +113,6 @@ const dltBtn = document.createElement("button");
 document.body.addEventListener("click", dataClients);
 
 */
-
-
-
-
-
 
 ////**************2 try***************///////
 

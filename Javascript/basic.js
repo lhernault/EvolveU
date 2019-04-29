@@ -1,4 +1,4 @@
-/* 
+/*
 
 */
 //console.log("Hello World from external JavaScript");
@@ -21,9 +21,9 @@ document.getElementById("btn1").addEventListener("click",onButtonClicked);
 function calculate(operation){
     var firstInput = document.calculator.input1.value
     var secondInput = document.calculator.input2.value
-    var result = eval(firstInput + operation + secondInput)
+    var result = eval(firstInput + operation + secondInput) /* test*/
     document.calculator.outcome.value = result
-    
+
 }
 
 
@@ -40,33 +40,33 @@ boton.addEventListener("click",taxCalculator); //add event to the button
 function taxCalculator(){
   let amount = Number(document.getElementById("income").value);
   taxes = 0;
-  
+
 
        if (amount <= 47630) {
      taxes =   amount * 0.15;
 
 
-  } else if (amount > 47630) { 
-    taxes = (amount-47630) * 0.205 + 7145; 
-    
- 
-  } else if (amount > 95259) { 
+  } else if (amount > 47630) {
+    taxes = (amount-47630) * 0.205 + 7145;
+
+
+  } else if (amount > 95259) {
     taxes = (amount-95259) * 0.26 + 16908;
-    
 
-  } else if (amount > 147667) { 
+
+  } else if (amount > 147667) {
     taxes = (amount-147667) * 0.29 + 30.535;
-   
 
-  } else { (amount > 210371 ) 
+
+  } else { (amount > 210371 )
     taxes =  (amount -147667) * 0.33 + 48719;
-    
+
   }
    //document.getElementById("canTax").value = taxes;
-   
-   document.getElementById("canTax").value = taxes // call the form named calculator2 
+
+   document.getElementById("canTax").value = taxes // call the form named calculator2
                                           // assign value to canTax Id to get the taxes in the input.
- }  
+ }
 
  /*********** ---                    --- *********/
   /*********** --- Working with Arrays --- *********/
@@ -86,7 +86,7 @@ boxArr = Number(document.getElementById("inputArr").value);
 let x = document.forms["arrayTask"]["inputArr"].value;
 
 itemsArr.push(boxArr);
-if (isNaN(x)) { 
+if (isNaN(x)) {
   document.getElementById("ArrMsj").textContent = "input is not a number!";
 
 } else
@@ -96,7 +96,7 @@ console.log(x);
 console.log(itemsArr);
 return false;
 }
- 
+
  //show the array...It works!!!/
 function showArray () {
 document.getElementById("inputArr").textContent = console.log(itemsArr);
@@ -106,7 +106,7 @@ document.getElementById("inputArr").textContent = console.log(itemsArr);
 
 function total() {
   var sum = 0;
-  for (var i = 0; i < itemsArr.length; i++) {           
+  for (var i = 0; i < itemsArr.length; i++) {
    sum = sum + itemsArr[i]   // Add number on each iteration
   };
   console.log(sum);
@@ -128,20 +128,12 @@ inputObj = document.getElementById("inputDic");
 lookOBj = document.getElementById("lookBtn").addEventListener("click", filtro);
 
 
-function filtro()   {  
+function filtro()   {
   const provinces = {
     ab: "alberta",
     bc: "british columbia",
     on: "ontario",
-    sk: "saskatchewan",    
+    sk: "saskatchewan",
   };
   console.log(provinces[inputObj.value]);
 }
-  
- 
-
-
-
-
-
-
