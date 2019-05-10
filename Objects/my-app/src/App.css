@@ -86,4 +86,9 @@ body {
     }
   }
 
-  
+  /* --Small tablets to big tablets: from 768 to 1023px-------- */
+@media only screen and (max-width:1200px) and (min-width:768px) {
+  body {
+    width: 100%;
+  }
+}

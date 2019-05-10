@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import logo from './logo.svg';
 import './App.css';
 import icon1 from './components/bell.svg';
@@ -9,7 +9,8 @@ import icon4 from './components/star.svg';
 
 //import IconeOne from './components/IconOne';
 import MathComp from './components/MathComp';
-import Account from './components/Account';
+import AccountComp from './components/AccountComp';
+import AccountsComp from './components/AccountsComp';
 
 
 
@@ -45,7 +46,7 @@ class App extends Component {
             //console.log(e);
             this.setState({
                 evento: "You clicked the music icon",
-                show: null
+                show: <AccountComp/>,
                 // show: <icon2 />
             })
 
@@ -53,7 +54,7 @@ class App extends Component {
             //console.log(e);
             this.setState({
                 evento: "You clicked the smile icon",
-                show: null
+                show: <AccountsComp/>,
                 // show: <icone3 />
             })
 
@@ -78,13 +79,17 @@ class App extends Component {
                   <img src={logo} className="App-logo" alt="logo"/>
                 </div>  
                 
-                  <button className="btn-icons" onClick={this.onIcon}><img  src ={icon1}  id="bell-icon" className="bell-logo" alt="icon1"/></button>
+                  <button className="btn-icons" onClick={this.onIcon}>
+                  <img  src ={icon1}  id="bell-icon" className="bell-logo" alt="icon1"/>
+                  </button>
+
                   <button className="btn-icons" onClick={this.onIcon}><img  src ={icon2}  id="music-icon" className="music-logo" alt="icon2"/></button>
                   <button className="btn-icons" onClick={this.onIcon}><img  src ={icon3}  id="smile-icon" className="smile-logo" alt="icon3"/></button>
                   <button className="btn-icons" onClick={this.onIcon}><img  src ={icon4}  id="star-icon" className="star-logo" alt="icon4"/></button>
                 
                 <div className = "show">
                     {this.state.show}
+                   
                 </div>
                
             </div>

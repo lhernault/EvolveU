@@ -1,10 +1,10 @@
-import acc from "./Account";
+import Account from "./Account";
 
 test('account test', () => {
 	console.log("testing account")
-	let first = new acc.Account(0, 'checkingAccount');
+	const first = new Account(100, 0, 'checkingAccount');
 
-	expect(first.blc).toBe(0);
+	expect(first.balance).toBe(0);
 
 	expect(first.accname).toBe('checkingAccount');
 
