@@ -1,96 +1,72 @@
-import React, { Component } from 'react';
-import Account from './Account';
-import './AccountComp.css';
+import React, { Component } from "react"
+// import ReactDOM from "react-dom"
+// import Account from "./Account"
+import './General.css';
 
-
-class AccountComp extends Component {
-	constructor(props){
-		super(props);
-		this.account = new Account(0,0, "a-account")
+class AccountApp extends Component {
+	constructor(props) {
+		super(props) 
+		// this.account = new Account(0,1000, "Nilou")
 		this.state = {
-			inputAmount : 0,
-			balance: 0,
-
-
+			// inputAmount : 0,
+		// 	balance: 0,
+			depositing: 0,
+			withdrawing: 0,
 		}
 
-		
-	}	
+	}
 
-	handleChange= (event) => {
-        if (event.target.id === "inputAmount") {
-            this.setState({input: event.target.value})
-        } else {
-            
-        }
-           console.log(this.state)
-    }	
+	deleteAccount = () => {
+		this.props.onRemove(this.props.accountObject.id)
+	}
+ 
+	depositAccount = () => {
+		this.props.onDeposit(this.props.accountObject.id, this.state.depositing)
+	}
 
+	withdrawAccount = () => {
+		this.props.onWithdraw(this.props.accountObject.id, this.state.withdrawing)
+	}
 
-     handleClick = (event) => {
-    if (event.target.id === "deposit" ) {
-        this.account.deposit(Number(this.state.input))
-        console.log("Balance",this.account.balance);
-       
-        console.log(this.state)
-    } else if (event.target.id === "withdraw" ) {
-        this.account.withdraw(Number(this.state.input))
-        console.log("Balance",this.account.balance);
-        
-    } else if (event.target.id === "balance" ) {
-       let baln =  this.account.checkBlc()
-       console.log(baln)
-        	this.setState({
-             balance: baln
-           
-        })
-    }
-}
+	onChange = (e) => {
+		// console.log("target", e.target.id);
+		this.setState({ 
+			[e.target.id]: e.target.value
+		});
 
-removeAccount = () => {
-	this.props.onRemove(this.props.accountObject.id)
-}
+	// handleChange = (e) => {
+	// 	e.target.id === "inputAmount"
+	// 	this.setState(input: event.target.value)
+	// }
 
-depot = () => {
-	this.props.onDeposit(this.props.accountObject.id, this.state.deposit)
-}
+	   // value = {Number(this.state.depositing)}
+	}
 
-withdraw1 = () => {
-	this.props.onWithdraw(this.props.accountObject.id, this.state.withdraw)
-}
+	render (props) {
+		return (
+			<div className = "boxAccountChild"> 
+				<div className = "accData">
+					<form>
+							<fieldset>
+								<legend className = "txth3">Account</legend> 
+									<h5>Name = {this.props.accountObject.accname}</h5>
+									<h5>Balance = ${this.props.accountObject.balance}</h5>
+									<br></br>
+							</fieldset>
+					</form>
 
-
-
-render (props){
-
-	return (
-		<div className= "boxChild">
-			<h5 className= "txth5">My Account</h5>
-			<div>
-				<input id="inputAmount" className = "inpD" onChange={this.handleChange}/>
-				<button id="deposit" className = "inputBtn" onClick={this.handleClick}>Deposit</button>
-				<button id="withdraw" className = "inputBtn" onClick={this.handleClick}>Withdraw</button>
-				<button id="balance" className = "inputBtn" onClick={this.handleClick}>Balance</button>
+				<button onClick={this.depositAccount} className = "btn"> Deposit </button>
+				<input className = "inpSingAcc" onChange={this.onChange} id='depositing' type='number' placeholder='Enter the amount here'></input>
 				<br></br>
-				<button id="delete" className = "inputBtn" onClick={this.removeAccount}>Delete</button>
+				<button onClick={this.withdrawAccount} className = "btn"> Withdraw </button>
+				<input className = "inpSingAcc" onChange={this.onChange} id='withdrawing' type='number' placeholder='Enter the amount here'></input>
+				<br></br>
+				<button onClick={this.deleteAccount} className = "btn"> Delete </button>
 			</div>
-			<div className = "txtdiv">
-			<h6>Account Name :       {this.account.accname}</h6>
-            <h6>Account Balance :    {this.state.balance}</h6>
-            <br></br>
-          	</div>
-		</div>
-
-
-	);
-
-
+			</div>
+			)
+		}
 
 }
 
-
-
-
-}
-
-export default AccountComp;
+export default AccountApp

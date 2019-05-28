@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AccountComp from './AccountComp';
 import Accounts from './Accounts';
-import './AccountComp.css';
+import './General.css';
 
 
 class AccountsComp extends Component {
@@ -9,17 +9,15 @@ class AccountsComp extends Component {
 		super();
 		this.state = {
 			theNewAccount: new Accounts(),
-			accountName: '',
+			accountName: null,
 			accountBalance: 0,
-			total: 0,
-			highest: 0,
-			lowest: 0,
-			
+			// total: 0,
+			// highest: 0,
+			// lowest: 0,			
 		}
 	}
 
-
-	 onHandleChange = (e) => {
+	onHandleChange = (e) => {
 		e.preventDefault();
 		console.log("target", e.target.id);
 		this.setState({
@@ -30,8 +28,9 @@ class AccountsComp extends Component {
 	
 	gettingNewAccount = () => {
 		const array1 = this.state.theNewAccount
-		array1.addAccount(this.state.accountName,Number(this.state.balance));
+		array1.addAccount(this.state.accountBalance,(this.state.accountName));
 		this.setState({theNewAccount: array1});
+		console.log(array1);
 	}
 
 	gettingAccountRemove = (id) => {
@@ -40,35 +39,19 @@ class AccountsComp extends Component {
 		this.setState({theNewAccount: array1});		
 	}
 
-	gettingDeposit = (balance, id) => {
+	gettingDeposit = (id, amount) => {
 		const array1 = this.state.theNewAccount
-		array1.depot(balance, id);
+		array1.deposit(id, amount);
 		this.setState({theNewAccount: array1});	
 	}
 
-	gettingWithdraw = (balance, id) => {
+	gettingWithdraw = (id, amount) => {
 		const array1 = this.state.theNewAccount
-		array1.withdraw1(balance, id);  
+		array1.withdraw(id, amount);  
 		this.setState({theNewAccount: array1});	
 	}
 
-	getttingTotal = () => {
-		let totAcc =this.theNewAccount.totalAccount();
-		this.setState({totAcc: totAcc});
-		return totAcc;
-	}
-
-	gettingHighest = () => {
-		let high = this.theNewAccount.highestAccount();
-		this.setState({high: high});
-		return high;
-	}
-
-	gettingLowest = () => {
-		let low = this.theNewAccount.lowestAccount();
-		this.setState({low: low});
-		return low;
-	}
+	
 
 
 
@@ -77,12 +60,14 @@ render() {
 		const obj = this.state.theNewAccount.arrayAccount
 		const list = obj.map(value => {
 			return <AccountComp key={value.id}
-								accountObject = {value}
+								accountObject={value}
 								onRemove = {this.gettingAccountRemove}
 								onDeposit = {this.gettingDeposit}
 								onWithdraw = {this.gettingWithdraw}
 
 			/>
+		// console.log(obj);
+	});
 	// const list = this.state.theNewAccount.arrayAccount.map((value) => {
 
 	// 	return <AccountComp 
@@ -93,21 +78,34 @@ render() {
 	// 		id = {this.state.theNewAccount.arrayAccount[value.id]}
 	// 		removeAccount = {(id) => this.removeAccount(id)}	
 	// 	/>
-	});
-		console.log(obj);
+	
+		
 
 
 	return (
 		<div className = "boxParent">
-			<div>
-				<h4 className = "txth3">Accounts List</h4> 
+			
+				
 				<input onChange={this.onHandleChange} name="accountName" className="inpName" id='accountName'type='text' placeholder='Enter Name'></input>
 				<br></br>
 				<input onChange={this.onHandleChange} name="accountBalance" className="inpbalance" id='accountBalance'type='number' placeholder='Enter Balance'></input>
 				<br></br>
 				<button onClick={this.gettingNewAccount} id="adding" className = "inputBtnP"> Add </button>
-			</div>
+				
+			
 				<br></br>
+
+				<div>
+					<form>
+						<fieldset>
+							<legend className = "txth3">Accounts List</legend> 
+								<h6> Total : {this.state.theNewAccount.totalAccount()}</h6>
+            					<h6> Highest:{this.state.theNewAccount.highestAccount()}</h6>
+            					<h6> Lowest:  {this.state.theNewAccount.lowestAccount()} </h6>
+						</fieldset>
+					</form>
+				</div>
+
 				
 				{list}
 

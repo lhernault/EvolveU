@@ -8,8 +8,8 @@ class Accounts {
 
 	}
 
-	addAccount (balance, accountName ) {
-		let addNewAcc = new Account (this.counter, balance, accountName);
+	addAccount (balance, accname ) {
+		let addNewAcc = new Account (this.counter, balance, accname);
 			this.arrayAccount.push(addNewAcc);
 			this.counter ++;
 			// return this.addNewAcc;

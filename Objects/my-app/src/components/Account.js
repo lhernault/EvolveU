@@ -2,7 +2,6 @@
 //functions here!
 class Account  { //creating the account . it has deposit, withdraw and balance
     constructor(id, balance, accname) { // atributs
-       
         this.balance = parseInt(balance); //parseInt force to be #
         this.accname = accname;
         this.id = id;

@@ -67,13 +67,11 @@ class MathComp extends Component {
 
             <div >
 			<div className= "calculator1"> </div>
-			<h6>Hello World from MathComp</h6>
-
+			   <div className= "calculator">
 		
-		<form className= "calculator">
 			<div>
-				<input className="inp" id="input1" ></input>
-		        <input className="inp" id="input2" ></input>
+				<input className="inpCal" id="input1" ></input>
+		        <input className="inpCal" id="input2" ></input>
       		</div>
 
 	      	<div>
@@ -84,8 +82,8 @@ class MathComp extends Component {
 		        <p>{this.state.outcome}</p>
 	      	</div>
 
-      	</form>
-
+      	
+        </div>
 
 	</div>
 
